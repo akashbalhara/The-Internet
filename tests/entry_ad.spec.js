@@ -1,7 +1,7 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
 
-test('Test Script click on the box and verify the visibility of the alert box', async ({ page }) => {
+test('Test Script to check the visibility of the entry modal', async ({ page }) => {
   // go to the internet website 
   await page.goto('https://the-internet.herokuapp.com/');
 
