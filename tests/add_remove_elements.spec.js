@@ -22,7 +22,6 @@ test('Test Script to add, detect and delete elements', async ({ page }) => {
 
   // verify the number of buttons added is equal to the selected number and deleting the buttons
   for (let i = elementNumber; i > 0; i--) {
-    console.log("Number of elements left = " ,i);
     await page.getByRole('button', { name: 'Delete' }).first().click();
 
   }
