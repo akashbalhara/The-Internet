@@ -1,7 +1,7 @@
 // @ts-check
 import { test, expect } from '@playwright/test';
 
-test('Test Script click on the box and verify the visibility of the alert box', async ({ page }) => {
+test('Test script to verify the functionality of drag and drop on elements', async ({ page }) => {
   // go to the internet website 
   await page.goto('https://the-internet.herokuapp.com/');
 
