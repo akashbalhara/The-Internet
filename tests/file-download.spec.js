@@ -14,14 +14,21 @@ test('Test Script to test download links', async ({ page }) => {
   // opening the relevant page
   await page.getByRole('link', { name : testName, exact: true  }).click();
   
-  // start waiting for the download
+  // storing all the links inside an array
+  const divLocator = page.locator('.example');
+  const linkList = await divLocator.getByRole('link').all();
+  
+  // clicking each link and starting download // downloading only first 10 files as files take time to download
+  for ( let i = 0; i < 10; i++) {
+    // start waiting for the download
   const downloadPromise = page.waitForEvent('download');
-  await page.getByText('TextFile.txt').click();
+  await linkList[i].click();
   const download = await downloadPromise;
 
-  // Wait for the download process to complete
+  //Wait for the download process to complete
   console.log(await download.path());
 
+  }
   
 
 
