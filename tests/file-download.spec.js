@@ -2,6 +2,8 @@
 import { test, expect } from '@playwright/test';
 
 test('Test Script to test download links', async ({ page }) => {
+
+  test.slow(); // marking as slow as file download may take time
   // go to the internet website 
   await page.goto('https://the-internet.herokuapp.com/');
 
@@ -19,7 +21,7 @@ test('Test Script to test download links', async ({ page }) => {
   const linkList = await divLocator.getByRole('link').all();
   
   // clicking each link and starting download // downloading only first 10 files as files take time to download
-  for ( let i = 0; i < 10; i++) {
+  for ( let i = 0; i < linkList.length; i++) {
     // start waiting for the download
   const downloadPromise = page.waitForEvent('download');
   await linkList[i].click();
