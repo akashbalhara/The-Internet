@@ -45,7 +45,8 @@ const config = {
     /* Record the video for test. See https://playwright.dev/docs/test-configuration#record-video */
     video: {
       mode: 'retain-on-failure',
-    }
+    },
+    permissions: ['geolocation'],
   },
 
   /* Configure projects for major browsers */
