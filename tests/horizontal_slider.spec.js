@@ -3,7 +3,6 @@ import { test, expect } from '@playwright/test';
 
 test('Test Script to test horizontal slider', async ({ page }) => {
 
-  test.slow(); // marking as slow as file download may take time
   // go to the internet website 
   await page.goto('https://the-internet.herokuapp.com/');
 
